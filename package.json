@@ -1,0 +1,19 @@
+{
+  "name": "mobx-history",
+  "version": "0.0.1",
+  "description": "Mobx History",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mobx",
+    "history"
+  ],
+  "author": "zjuasmn",
+  "license": "MIT",
+  "dependencies": {
+    "history": "^4.5.1",
+    "mobx": "^3.1.0"
+  }
+}
