@@ -1,10 +1,10 @@
 import {observable, action, extendObservable} from 'mobx'
-
+const debug = require('debug')('mobx-history');
 const reservedKeys = {location: true, action: true, length: true, dispose: true};
 
 export default class History {
   history;
-  @observable _location={};
+  @observable _location = {};
   @observable action;
   @observable length;
   
@@ -28,7 +28,8 @@ export default class History {
         })
       })(key);
     }
-    const update = action(() => {
+    const update = action((location, action) => {
+      debug(this.location, location, action);
       extendObservable(this._location, this.history.location);
       this.action = this.history.action;
       this.length = this.history.length;

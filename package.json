@@ -1,6 +1,6 @@
 {
   "name": "mobx-history",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Mobx History",
   "main": "index.js",
   "repository": "zjuasmn/mobx-history",
@@ -15,6 +15,7 @@
   "author": "zjuasmn <zjuasmn@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "debug": "^2.6.1",
     "history": "^4.5.1",
     "mobx": "^3.1.0"
   },
