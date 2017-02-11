@@ -35,6 +35,7 @@ export default class History {
       this.length = this.history.length;
     });
     
+    debug('begin listen');
     update();
     this.unlisten = this.history.listen(update);
   }
