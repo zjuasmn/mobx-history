@@ -3,7 +3,7 @@
 [npm-badge]: https://img.shields.io/npm/v/mobx-history.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/mobx-history
 
-Mobx wrapper of [history](https://github.com/ReactTraining/history), make it observable! Try it here [runkit.com](https://runkit.com/zjuasmn/mobx-history).
+Mobx wrapper of [history](https://github.com/ReactTraining/history), make it observable!
 
 ## Installation
 
@@ -42,7 +42,7 @@ Then use `mobx-history` object like original `history` object, so few code chang
 
 `mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed. It also provide a location setter to perform `history.location = ...` as `history.push(...)`. call `dispose` method to stop listening from original `history`.
 
-See below sample for more detail, or you can play it in [runkit.com](https://runkit.com/zjuasmn/mobx-history)
+See below sample for more detail.
 
 ```js
 const createMemoryHistory = require('mobx-history').createMemoryHistory;
