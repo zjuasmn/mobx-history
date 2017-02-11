@@ -50,10 +50,10 @@ const {autorun} = require('mobx');
 
 let history = createMemoryHistory();
 
-autorun(()=>{console.log('pathname', history.location.pathname)});
-autorun(()=>{console.log('action', history.action)});
-autorun(()=>{console.log('length', history.length)});
-autorun(()=>{console.log('search', history.location.search)});
+autorun(()=>{console.log('pathname ' + history.location.pathname)});
+autorun(()=>{console.log('action ' + history.action)});
+autorun(()=>{console.log('length ' + history.length)});
+autorun(()=>{console.log('search ' + history.location.search)});
 // > pathname /
 // > action POP
 // > length 1

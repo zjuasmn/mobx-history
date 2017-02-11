@@ -3,7 +3,7 @@
   "version": "0.1.3",
   "description": "Mobx History",
   "main": "index.js",
-  "repository": "https://github.com/zjuasmn/react-mobx-router.git",
+  "repository": "zjuasmn/mobx-history",
   "scripts": {
     "build": "babel src -d . --ignore __test__",
     "test": "mocha --require babel-register src/__test__"
