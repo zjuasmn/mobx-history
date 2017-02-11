@@ -3,17 +3,29 @@
   "version": "0.0.1",
   "description": "Mobx History",
   "main": "index.js",
+  "repository": "https://github.com/zjuasmn/react-mobx-router.git",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "babel src -d . --ignore __test__",
+    "test": "mocha --require babel-register src/__test__"
   },
   "keywords": [
     "mobx",
     "history"
   ],
-  "author": "zjuasmn",
+  "author": "zjuasmn <zjuasmn@gmail.com>",
   "license": "MIT",
   "dependencies": {
     "history": "^4.5.1",
     "mobx": "^3.1.0"
+  },
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-cli": "^6.22.2",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
+    "babel-register": "^6.22.0",
+    "jasmine": "^2.5.3",
+    "mocha": "^3.2.0"
   }
 }

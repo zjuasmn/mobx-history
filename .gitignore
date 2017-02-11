@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Logs
 logs
 *.log
@@ -39,4 +38,5 @@ jspm_packages
 
 yarn.lock
 .idea
-
+/*.js
+!/src/

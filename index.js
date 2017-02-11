@@ -1,47 +1,32 @@
-import createHistory from 'history/createMemoryHistory'
-import {observable, computed} from 'mobx'
+'use strict';
 
-export default class History {
-  history;
-  @observable _location;
-  @observable action;
-  set location(location) {
-    this.history.push(location);
-  }
-  
-  get location() {
-    return this._location;
-  }
-  
-  unsubscribe = () => {
-  };
-  subscribe = () => {
-    this.unsubscribe();
-    this.unsubscribe = this.history.listen((location, action) => {
-      this._location = location;
-      this.action = action;
-    });
-  };
-  
-  constructor(history = createHistory()) {
-    this.history = history;
-    this._location = history.location;
-    this.subscribe();
-  }
-  
-  /*
-   * History methods
-   */
-  push = ::this.history.push;
-  
-  replace = ::this.history.replace;
-  
-  go = ::this.history.go;
-  
-  goBack = ::this.history.goBack;
-  
-  goForward = ::this.history.goForward;
-  
-  createHref = ::this.history.createHref;
-  
-}
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createMemoryHistory = exports.createHashHistory = exports.createBrowserHistory = exports.History = undefined;
+
+var _History2 = require('./History');
+
+var _History3 = _interopRequireDefault(_History2);
+
+var _createBrowserHistory2 = require('./createBrowserHistory');
+
+var _createBrowserHistory3 = _interopRequireDefault(_createBrowserHistory2);
+
+var _createHashHistory2 = require('./createHashHistory');
+
+var _createHashHistory3 = _interopRequireDefault(_createHashHistory2);
+
+var _createMemoryHistory2 = require('./createMemoryHistory');
+
+var _createMemoryHistory3 = _interopRequireDefault(_createMemoryHistory2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+exports.History = _History3.default;
+exports.default = History;
+exports.createBrowserHistory = _createBrowserHistory3.default;
+exports.createHashHistory = _createHashHistory3.default;
+exports.createMemoryHistory = _createMemoryHistory3.default;
+// export { createLocation, locationsAreEqual } from 'history/LocationUtils'
+// export { parsePath, createPath } from 'history/PathUtils'
