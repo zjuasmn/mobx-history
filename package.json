@@ -1,6 +1,6 @@
 {
   "name": "mobx-history",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Mobx History",
   "main": "index.js",
   "repository": "https://github.com/zjuasmn/react-mobx-router.git",
