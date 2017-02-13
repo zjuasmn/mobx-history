@@ -7,15 +7,18 @@ Mobx wrapper of [history](https://github.com/ReactTraining/history), make it obs
 
 ## Installation
 
-Using [npm](https://www.npmjs.com/):
+Using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/):
 
     $ npm install --save mobx-history
-
-Using [yarn](https://yarnpkg.com/):
-
+    or
     $ yarn add mobx-history
 
-Then with a module bundler like [webpack](https://webpack.github.io/), use as you would anything else, get the `History` class:
+Use CDN
+
+- Include mobx first [https://unpkg.com/mobx/lib/mobx.umd.js](https://unpkg.com/mobx/lib/mobx.umd.js)
+- The include [https://unpkg.com/mobx-history/umd/mobx-history.js](https://unpkg.com/mobx-history/umd/mobx-history.js)
+
+Then get the `History` class:
 
 ```js
 // using ES6 modules
@@ -23,6 +26,9 @@ import History from 'mobx-history'
 
 // using CommonJS modules
 var History = require('mobx-history').History
+
+// using CDN
+var History = mobxHistory.History
 ```
 
 ## Usage
