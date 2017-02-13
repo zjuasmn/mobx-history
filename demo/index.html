@@ -41,7 +41,7 @@ Check your console for the output of below script!
 
 
   // Don't forget to dispose, or it will keep listening.
-  history.dispose();
+  history.stopListen();
 </pre>
 <script>
   const createMemoryHistory = mobxHistory.createMemoryHistory;
@@ -76,7 +76,7 @@ Check your console for the output of below script!
 
 
   // Don't forget to dispose, or it will keep listening.
-  history.dispose();
+  history.stopListen();
 </script>
 </body>
 </html>

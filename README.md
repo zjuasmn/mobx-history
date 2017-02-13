@@ -46,7 +46,7 @@ var history = createMemoryHistory();
 
 Then use `mobx-history` object like original `history` object, so few code changed in transitioning `history` to `mobx-history`. Original `history` object can be visited in property `history`.
 
-`mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed. It also provide a location setter to perform `history.location = ...` as `history.push(...)`. call `dispose` method to stop listening from original `history`.
+`mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed. It also provide a location setter to perform `history.location = ...` as `history.push(...)`. call `stopListen` method to stop listening from original `history`.
 
 See below sample for more detail.
 
@@ -83,5 +83,5 @@ history.replace({pathname:'/path3',search:'?q=1'});
 
 
 // Don't forget to dispose, or it will keep listening.
-history.dispose();
+history.stopListen();
 ```
