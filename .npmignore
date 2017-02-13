@@ -3,5 +3,4 @@ node_modules
 yarn.lock
 .gitignore
 src/
-demo/
 .idea
