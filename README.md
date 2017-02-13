@@ -3,7 +3,7 @@
 [npm-badge]: https://img.shields.io/npm/v/mobx-history.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/mobx-history
 
-Mobx wrapper of [history](https://github.com/ReactTraining/history), make it observable!
+Mobx wrapper of [history](https://github.com/ReactTraining/history), make it observable! `mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed!
 
 ## Installation
 
