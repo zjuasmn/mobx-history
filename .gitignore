@@ -39,4 +39,5 @@ jspm_packages
 yarn.lock
 .idea
 /*.js
+umd/
 !/src/
