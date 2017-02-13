@@ -6,3 +6,4 @@ src/
 scripts/
 .idea
 webpack.config.js
+.babelrc
