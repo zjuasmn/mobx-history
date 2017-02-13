@@ -2,6 +2,7 @@ import {autorun, toJS} from 'mobx'
 import History from '../History'
 import assert from 'assert'
 import createHistory from 'history/createMemoryHistory'
+import {expect} from 'chai'
 
 describe('History', () => {
   let history, raw;
@@ -10,7 +11,7 @@ describe('History', () => {
     history = new History(raw);
   });
   afterEach(() => {
-    history.dispose();
+    history.stopListen();
   });
   it('original history can be visit by "history"', () => {
     assert(history.history == raw);
@@ -80,17 +81,21 @@ describe('History', () => {
     stop();
   });
   
-  it('dispose should work', () => {
+  it('startListen and stopListen should work', () => {
     let stack = [];
     let stop = autorun(() => {
       stack.push(toJS(history.location));
     });
     assert(stack.length == 1);
-    history.dispose();
+    history.stopListen();
     history.location = {pathname: '/sub'};
     history.location = '/sub1';
-    
+    history.location = '/sub2';
     assert(stack.length == 1);
+    history.startListen();
+    assert(stack.length == 2);
+    history.location = '/sub3';
+    assert(stack.length == 3);
     stop();
   });
 });

@@ -36,12 +36,16 @@ export default class History {
     });
     
     debug('begin listen');
-    update();
-    this.unlisten = this.history.listen(update);
-  }
-  
-  dispose() {
-    this.unlisten();
-    this.unlisten = () => null;
+    let handler = null;
+    this.startListen = () => {
+      if (handler) return;
+      update();
+      handler = this.history.listen(update);
+      this.stopListen = () => {
+        handler && handler();
+        handler = null;
+      }
+    };
+    this.startListen();
   }
 }
