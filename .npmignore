@@ -1,9 +1,0 @@
-.npmignore
-node_modules
-yarn.lock
-.gitignore
-src/
-scripts/
-.idea
-webpack.config.js
-.babelrc
