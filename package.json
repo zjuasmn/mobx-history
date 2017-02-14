@@ -13,6 +13,11 @@
     "prerelease": "npm run build",
     "release": "node ./scripts/release.js"
   },
+  "files": [
+    "*.js",
+    "!*.config.js",
+    "umd"
+  ],
   "keywords": [
     "mobx",
     "history"
