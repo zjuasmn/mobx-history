@@ -8,10 +8,11 @@ Mobx wrapper of [history](https://github.com/ReactTraining/history), make it obs
 ## Installation
 
 Using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/):
-
-    $ npm install --save mobx-history
-    or
-    $ yarn add mobx-history
+```bash
+$ npm install --save mobx-history
+or
+$ yarn add mobx-history
+```
 
 Use CDN
 
@@ -49,6 +50,40 @@ Then use `mobx-history` object like original `history` object, so few code chang
 `mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed. It also provide a location setter to perform `history.location = ...` as `history.push(...)`. call `stopListen` method to stop listening from original `history`.
 
 See below sample for more detail.
+## props
+
+- **@observable length**
+  -  type: `number`
+
+The number of entries in the history stack.
+
+- **@observable location**
+  -  type: `object`
+  
+The current location
+
+- **@observable action**
+  -  type: `string`
+
+The current navigation action
+
+- **startListen**
+  - type: `function`
+
+- **stopListen**
+  - type: `function`
+
+- **history**
+  - type: `object`
+
+original `history` object
+
+- **...props**
+
+Other properties would be same as original `history` object.
+
+
+
 
 ```js
 const createMemoryHistory = require('mobx-history').createMemoryHistory;
