@@ -1,4 +1,4 @@
-import {observable, action, extendObservable} from 'mobx'
+import {observable, action, extendObservable} from "mobx";
 const debug = require('debug')('mobx-history');
 const reservedKeys = {location: true, action: true, length: true, dispose: true};
 
