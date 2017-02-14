@@ -1,4 +1,4 @@
-# mobx-history [![npm package][npm-badge]][npm] [![GitHub issues](https://img.shields.io/github/issues/zjuasmn/mobx-history.svg)]()
+# mobx-history [![npm package][npm-badge]][npm] [![GitHub issues](https://img.shields.io/github/issues/zjuasmn/mobx-history.svg)]() [![Travis](https://img.shields.io/travis/zjuasmn/mobx-history.svg)]()
 
 [npm-badge]: https://img.shields.io/npm/v/mobx-history.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/mobx-history
