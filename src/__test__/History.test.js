@@ -1,8 +1,8 @@
-import {autorun, toJS} from 'mobx'
-import History from '../History'
-import assert from 'assert'
-import createHistory from 'history/createMemoryHistory'
-import {expect} from 'chai'
+import {autorun, toJS} from "mobx";
+import History from "../History";
+import assert from "assert";
+import createHistory from "history/createMemoryHistory";
+import {expect} from "chai";
 
 describe('History', () => {
   let history, raw;
@@ -82,6 +82,7 @@ describe('History', () => {
   });
   
   it('startListen and stopListen should work', () => {
+    history.startListen();
     let stack = [];
     let stop = autorun(() => {
       stack.push(toJS(history.location));
