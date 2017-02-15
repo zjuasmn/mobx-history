@@ -34,7 +34,9 @@ var History = mobxHistory.History
 
 ## Usage
 
-Initalize `mobx-history` with `history` object:
+Assuming you know how to use `history`, if not, check its [document](https://github.com/ReactTraining/history).
+
+  Initalize `mobx-history` with `history` object:
 
 ```js
 import createMemoryHistoryfrom 'history/createMemoryHistory'
@@ -49,74 +51,78 @@ Then use `mobx-history` object like original `history` object, so few code chang
 
 `mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed. It also provide a location setter to perform `history.location = ...` as `history.push(...)`. call `stopListen` method to stop listening from original `history`.
 
-See below sample for more detail.
-## props
+## Props
 
-- **@observable length**
+- **`@observable` length**
   -  type: `number`
 
 The number of entries in the history stack.
 
-- **@observable location**
+- **`@observable` location**
   -  type: `object`
   
-The current location
+The current location. `history.location=...` would trigger `history.push(...)`
 
-- **@observable action**
+- **`@observable` action**
   -  type: `string`
 
-The current navigation action
+The current navigation action.
 
 - **startListen**
   - type: `function`
 
+let `mobx-history` in sync with `history`, this would be call automatically with `new History(...)` or `createXXXHistory`.
+
 - **stopListen**
   - type: `function`
+
+`stopListen` should be called to avoid memory leak.
 
 - **history**
   - type: `object`
 
-original `history` object
+Original `history` object.
 
 - **...props**
 
-Other properties would be same as original `history` object.
+Other properties would be same as in original `history` object. See [`history document`](https://github.com/ReactTraining/history#properties)
 
 
+## Demo
 
+Live example is in [Codepen](http://codepen.io/zjuasmn/pen/OWqVrz?editors=0011)
 
 ```js
-const createMemoryHistory = require('mobx-history').createMemoryHistory;
-const {autorun} = require('mobx');
+  const createMemoryHistory = mobxHistory.createMemoryHistory;
+  const {autorun} = mobx;
 
-let history = createMemoryHistory();
+  let h = createMemoryHistory();
 
-autorun(()=>{console.log('pathname ' + history.location.pathname)});
-autorun(()=>{console.log('action ' + history.action)});
-autorun(()=>{console.log('length ' + history.length)});
-autorun(()=>{console.log('search ' + history.location.search)});
-// > pathname /
-// > action POP
-// > length 1
-// > search
+  autorun(()=>{console.log('pathname ' + h.location.pathname)});
+  autorun(()=>{console.log('action ' + h.action)});
+  autorun(()=>{console.log('length ' + h.length)});
+  autorun(()=>{console.log('search ' + h.location.search)});
+  // > pathname /
+  // > action POP
+  // > length 1
+  // > search
 
-history.location = '/path';
-// > pathname /path
-// > action PUSH
-// > length 2
+  h.location = '/path';
+  // > pathname /path
+  // > action PUSH
+  // > length 2
 
-history.push('/path2');
-// > print '/path2'
-// > length 3
+  h.push('/path2');
+  // > print '/path2'
+  // > length 3
 
-history.replace('/path3');
-// > pathname /path3
-// > action REPLACE
+  h.replace('/path3');
+  // > pathname /path3
+  // > action REPLACE
 
-history.replace({pathname:'/path3',search:'?q=1'});
-// > search ?q=1
+  h.replace({pathname:'/path3',search:'?q=1'});
+  // > search ?q=1
 
-
-// Don't forget to dispose, or it will keep listening.
-history.stopListen();
+  // Don't forget to dispose, or it will keep listening.
+  h.stopListen();
 ```
