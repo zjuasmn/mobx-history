@@ -1,4 +1,4 @@
-# mobx-history [![npm package][npm-badge]][npm] [![GitHub issues](https://img.shields.io/github/issues/zjuasmn/mobx-history.svg)]() [![Travis](https://img.shields.io/travis/zjuasmn/mobx-history.svg)]() [![Coveralls](https://img.shields.io/coveralls/zjuasmn/mobx-history.svg)]()
+# mobx-history [![npm package][npm-badge]][npm] [![GitHub issues](https://img.shields.io/github/issues/zjuasmn/mobx-history.svg)]() [![Build Status](https://travis-ci.org/zjuasmn/mobx-history.svg?branch=master)](https://travis-ci.org/zjuasmn/mobx-history) [![Coverage Status](https://coveralls.io/repos/github/zjuasmn/mobx-history/badge.svg?branch=master)](https://coveralls.io/github/zjuasmn/mobx-history?branch=master)
 
 [npm-badge]: https://img.shields.io/npm/v/mobx-history.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/mobx-history
