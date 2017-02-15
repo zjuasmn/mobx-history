@@ -124,5 +124,5 @@ Live example is in [Codepen](http://codepen.io/zjuasmn/pen/OWqVrz?editors=0011)
   // > search ?q=1
 
   // Don't forget to dispose, or it will keep listening.
-  h.stopListen();
+  // h.stopListen();
 ```
