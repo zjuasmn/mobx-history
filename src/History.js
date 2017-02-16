@@ -1,6 +1,6 @@
 import {observable, action, extendObservable} from "mobx";
 const debug = require('debug')('mobx-history');
-const reservedKeys = {location: true, action: true, length: true, dispose: true};
+const reservedKeys = {location: true, action: true, length: true};
 
 export default class History {
   history;
