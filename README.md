@@ -5,6 +5,8 @@
 
 Mobx wrapper of [history](https://github.com/ReactTraining/history), make it observable! `mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed!
 
+The main purpose of this module to power [react-mobx-router](https://github.com/zjuasmn/react-mobx-router).
+
 ## Installation
 
 Using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/):
@@ -39,7 +41,7 @@ Assuming you know how to use `history`, if not, check its [document](https://git
   Initalize `mobx-history` with `history` object:
 
 ```js
-import createMemoryHistoryfrom 'history/createMemoryHistory'
+import createMemoryHistory from 'history/createMemoryHistory'
 let history = new History(createMemoryHistory())
 
 // or just change 'history' to 'mobx-history'
