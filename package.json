@@ -1,6 +1,6 @@
 {
   "name": "mobx-history",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Mobx History",
   "main": "index.js",
   "repository": "zjuasmn/mobx-history",
