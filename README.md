@@ -39,7 +39,7 @@ Assuming you know how to use `history`, if not, check its [document](https://git
   Initalize `mobx-history` with `history` object:
 
 ```js
-import createMemoryHistoryfrom 'history/createMemoryHistory'
+import createMemoryHistory from 'history/createMemoryHistory'
 let history = new History(createMemoryHistory())
 
 // or just change 'history' to 'mobx-history'
@@ -92,7 +92,7 @@ Other properties would be same as in original `history` object. See [`history do
 
 Live example is in [Codepen](http://codepen.io/zjuasmn/pen/OWqVrz?editors=0011)
 
-```js
+```javascript
   const createMemoryHistory = mobxHistory.createMemoryHistory;
   const {autorun} = mobx;
 
@@ -124,5 +124,6 @@ Live example is in [Codepen](http://codepen.io/zjuasmn/pen/OWqVrz?editors=0011)
   // > search ?q=1
 
   // Don't forget to dispose, or it will keep listening.
+  // You may call it in componentWillUnmount in react.
   // h.stopListen();
 ```
