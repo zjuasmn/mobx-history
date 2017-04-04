@@ -8,7 +8,7 @@ module.exports = {
   
   module: {
     rules: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader' }
+      {test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader'}
     ]
   },
   
@@ -17,7 +17,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'development')
     })
   ],
-  externals:{
-    mobx:'mobx'
+  externals: {
+    mobx: 'mobx'
   }
 };

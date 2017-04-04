@@ -4,14 +4,14 @@ const execSync = require('child_process').execSync;
 const prompt = require('readline-sync').question;
 
 const exec = (command) =>
-  execSync(command, { stdio: 'inherit' });
+  execSync(command, {stdio: 'inherit'});
 
 const getPackageVersion = () =>
   JSON.parse(readFileSync(resolvePath(__dirname, '../package.json'))).version;
 
 if (process.cwd() !== resolvePath(__dirname, '..')) {
   console.error('The release script must be run from the repo root');
-  process.exit(1)
+  process.exit(1);
 }
 
 // Get the next version, which may be specified as a semver
