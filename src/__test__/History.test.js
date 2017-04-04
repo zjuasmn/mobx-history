@@ -10,9 +10,7 @@ describe('History', () => {
     raw = createHistory();
     history = new History(raw);
   });
-  afterEach(() => {
-    history.stopListen();
-  });
+  
   it('original history can be visit by "history"', () => {
     assert(history.history === raw);
   });
@@ -78,25 +76,6 @@ describe('History', () => {
     // go will not change length
     history.goBack();
     assert(stack.length === 2);
-    stop();
-  });
-  
-  it('startListen and stopListen should work', () => {
-    history.startListen();
-    let stack = [];
-    let stop = autorun(() => {
-      stack.push(toJS(history.location));
-    });
-    assert(stack.length === 1);
-    history.stopListen();
-    history.location = {pathname: '/sub'};
-    history.location = '/sub1';
-    history.location = '/sub2';
-    assert(stack.length === 1);
-    history.startListen();
-    assert(stack.length === 2);
-    history.location = '/sub3';
-    assert(stack.length === 3);
     stop();
   });
 });

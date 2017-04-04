@@ -1,19 +1,31 @@
-import {observable, action, extendObservable} from "mobx";
+import {action, Atom, extendObservable, observable} from "mobx";
 const debug = require('debug')('mobx-history');
 const reservedKeys = {location: true, action: true, length: true};
 
 export default class History {
+  atom;
   history;
   @observable _location = {};
-  @observable action;
-  @observable length;
+  @observable _action;
+  @observable _length;
   
   set location(location) {
     this.history.push(location);
   }
   
   get location() {
+    this.atom.reportObserved();
     return this._location;
+  }
+  
+  get action() {
+    this.atom.reportObserved();
+    return this._action;
+  }
+  
+  get length() {
+    this.atom.reportObserved();
+    return this._length;
   }
   
   constructor(history) {
@@ -31,21 +43,22 @@ export default class History {
     const update = action((location, action) => {
       debug(this.location, location, action);
       extendObservable(this._location, this.history.location);
-      this.action = this.history.action;
-      this.length = this.history.length;
+      this._action = this.history.action;
+      this._length = this.history.length;
     });
     
-    debug('begin listen');
     let handler = null;
-    this.startListen = () => {
-      if (handler) return;
-      update();
-      handler = this.history.listen(update);
-      this.stopListen = () => {
+    this.atom = new Atom('History',
+      () => {
+        debug('begin listen');
+        update();
+        handler = this.history.listen(update);
+      },
+      () => {
+        debug('stop listen');
         handler && handler();
         handler = null;
       }
-    };
-    this.startListen();
+    );
   }
 }
