@@ -5,8 +5,6 @@
 
 Mobx wrapper of [history](https://github.com/ReactTraining/history), make it observable! `mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed!
 
-The main purpose of this module to power [react-mobx-router](https://github.com/zjuasmn/react-mobx-router).
-
 ## Installation
 
 Using [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/):
@@ -41,7 +39,7 @@ Assuming you know how to use `history`, if not, check its [document](https://git
   Initalize `mobx-history` with `history` object:
 
 ```js
-import createMemoryHistory from 'history/createMemoryHistory'
+import createMemoryHistoryfrom 'history/createMemoryHistory'
 let history = new History(createMemoryHistory())
 
 // or just change 'history' to 'mobx-history'
@@ -55,30 +53,20 @@ Then use `mobx-history` object like original `history` object, so few code chang
 
 ## Props
 
-- **`@observable` length**
+- **`getter` length**
   -  type: `number`
 
 The number of entries in the history stack.
 
-- **`@observable` location**
+- **`getter` location**
   -  type: `object`
   
 The current location. `history.location=...` would trigger `history.push(...)`
 
-- **`@observable` action**
+- **`getter` action**
   -  type: `string`
 
 The current navigation action.
-
-- **startListen**
-  - type: `function`
-
-let `mobx-history` in sync with `history`, this would be call automatically with `new History(...)` or `createXXXHistory`.
-
-- **stopListen**
-  - type: `function`
-
-`stopListen` should be called to avoid memory leak.
 
 - **history**
   - type: `object`
@@ -125,6 +113,4 @@ Live example is in [Codepen](http://codepen.io/zjuasmn/pen/OWqVrz?editors=0011)
   h.replace({pathname:'/path3',search:'?q=1'});
   // > search ?q=1
 
-  // Don't forget to dispose, or it will keep listening.
-  // h.stopListen();
 ```
