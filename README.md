@@ -53,30 +53,20 @@ Then use `mobx-history` object like original `history` object, so few code chang
 
 ## Props
 
-- **`@observable` length**
+- **`getter` length**
   -  type: `number`
 
 The number of entries in the history stack.
 
-- **`@observable` location**
+- **`getter` location**
   -  type: `object`
   
 The current location. `history.location=...` would trigger `history.push(...)`
 
-- **`@observable` action**
+- **`getter` action**
   -  type: `string`
 
 The current navigation action.
-
-- **startListen**
-  - type: `function`
-
-let `mobx-history` in sync with `history`, this would be call automatically with `new History(...)` or `createXXXHistory`.
-
-- **stopListen**
-  - type: `function`
-
-`stopListen` should be called to avoid memory leak.
 
 - **history**
   - type: `object`
@@ -123,6 +113,4 @@ Live example is in [Codepen](http://codepen.io/zjuasmn/pen/OWqVrz?editors=0011)
   h.replace({pathname:'/path3',search:'?q=1'});
   // > search ?q=1
 
-  // Don't forget to dispose, or it will keep listening.
-  // h.stopListen();
 ```
