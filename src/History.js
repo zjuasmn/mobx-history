@@ -40,9 +40,18 @@ export default class History {
         })
       })(key);
     }
+
     const update = action((location, action) => {
       debug(this.location, location, action);
-      extendObservable(this._location, this.history.location);
+
+      for (let key in this.history.location) {
+        if (this._location.hasOwnProperty(key)) {
+          this._location[key] = this.history.location[key];
+         } else {
+          extendObservable(this._location, { [key]: this.history.location[key] });
+        }
+      }
+
       this._action = this.history.action;
       this._length = this.history.length;
     });
