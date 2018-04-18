@@ -3,6 +3,8 @@
 [npm-badge]: https://img.shields.io/npm/v/mobx-history.svg?style=flat-square
 [npm]: https://www.npmjs.org/package/mobx-history
 
+Updated to 2.0.0 to use mobx v4 as peer dependency, enjoy it. Thanks to @kwoon and @ksandin
+
 Mobx wrapper of [history](https://github.com/ReactTraining/history), make it observable! `mobx-history` object made three properties `length`, `location`, `action` observable, so no more listener needed!
 
 ## Installation
