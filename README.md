@@ -41,11 +41,11 @@ Assuming you know how to use `history`, if not, check its [document](https://git
   Initalize `mobx-history` with `history` object:
 
 ```js
-import createMemoryHistoryfrom 'history/createMemoryHistory'
+import { createMemoryHistory } from 'history'
 let history = new History(createMemoryHistory())
 
 // or just change 'history' to 'mobx-history'
-import createMemoryHistory from 'mobx-history/createMemoryHistory'
+import { createMemoryHistory } from 'mobx-history'
 var history = createMemoryHistory();
 ```
 
